@@ -1,5 +1,5 @@
-/* 
-Credit: www.templatemo.com 
+/*
+Credit: www.templatemo.com
 Template: 409 travel
 */
 
@@ -43,7 +43,7 @@ Template: 409 travel
     float: left;
 }
 
-.owl-controls .owl-page,.owl-controls .owl-buttons div {
+.owl-controls .owl-page, .owl-controls .owl-buttons div {
     cursor: pointer;
 }
 
@@ -57,10 +57,10 @@ Template: 409 travel
 }
 
 .grabbing {
-    cursor: url(../images/grabbing.png) 8 8,move;
+    cursor: url(../images/grabbing.png) 8 8, move;
 }
 
-.owl-carousel .owl-wrapper,.owl-carousel .owl-item {
+.owl-carousel .owl-wrapper, .owl-carousel .owl-item {
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
@@ -258,7 +258,7 @@ Template: 409 travel
 }
 
 @-webkit-keyframes backSlideIn {
-    0%,25% {
+    0%, 25% {
         opacity: .5;
         -webkit-transform: translateZ(-500px) translateX(200%);
     }
@@ -275,7 +275,7 @@ Template: 409 travel
 }
 
 @-moz-keyframes backSlideIn {
-    0%,25% {
+    0%, 25% {
         opacity: .5;
         -moz-transform: translateZ(-500px) translateX(200%);
     }
@@ -292,7 +292,7 @@ Template: 409 travel
 }
 
 @keyframes backSlideIn {
-    0%,25% {
+    0%, 25% {
         opacity: .5;
         transform: translateZ(-500px) translateX(200%);
     }
@@ -389,11 +389,11 @@ Template: 409 travel
     }
 }
 
-.flex-container a:active,.flexslider a:active,.flex-container a:focus,.flexslider a:focus {
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
     outline: none;
 }
 
-.slides,.flex-control-nav,.flex-direction-nav {
+.slides, .flex-control-nav, .flex-direction-nav {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -404,9 +404,19 @@ Template: 409 travel
     padding: 0;
 }
 
-.flexslider .slides>li {
+.flexslider .slides > li {
     display: none;
     -webkit-backface-visibility: hidden;
+}
+
+.flexslider .slides > li.active {
+    width: 100%;
+    float: left;
+    margin-right: -100%;
+    position: relative;
+    display: block;
+    z-index: 2;
+    opacity: 1;
 }
 
 .flexslider .slides img {
@@ -434,7 +444,7 @@ html[xmlns] .slides {
     height: 1%;
 }
 
-.no-js .slides>li:first-child {
+.no-js .slides > li:first-child {
     display: block;
 }
 

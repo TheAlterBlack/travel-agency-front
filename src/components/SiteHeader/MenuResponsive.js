@@ -1,19 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-export default class MainMenu extends Component {
-    render() {
+export default class MenuResponsive extends Component {
+    render () {
         return (
-            <div className="main-menu">
-                <ul className="visible-lg visible-md">
+            <div className="menu-responsive">
+                <ul>
                     <li className="active"><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <a href="#" className="toggle-menu visible-sm visible-xs">
-                    <i className="fa fa-bars" />
-                </a>
             </div>
         );
     };
