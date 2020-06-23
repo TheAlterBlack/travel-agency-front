@@ -466,12 +466,11 @@ h3.widget-title {
 }
 
 .list-item {
+    display: block;
+    width: 262px;
     overflow: hidden;
     margin: 0 15px;
-}
-
-.list-item .list-thumb {
-    overflow: hidden;
+    float: left;
 }
 
 .list-item .list-thumb .title {
@@ -506,8 +505,9 @@ h3.widget-title {
     margin: 0 0 15px 0;
 }
 
-.list-item .list-content a.price-btn {
+.list-item .list-content button.price-btn {
     display: block;
+    width: 100%;
     background-color: #9ed034;
     color: #fff;
     padding: 12px;
@@ -520,62 +520,6 @@ h3.widget-title {
 
 .list-item .list-content a.price-btn:hover {
     background-color: #90be2c;
-}
-
-.owl-next, .owl-prev {
-    position: absolute;
-    top: 50%;
-    margin-top: -20px;
-    width: 40px;
-    height: 40px;
-    background-color: #9ed034;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-}
-
-.owl-next {
-    right: -40px;
-}
-
-@media screen and (min-width: 240px) {
-    .owl-next {
-        right: 15px;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .owl-next {
-        right: 13px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .owl-next {
-        right: -40;
-    }
-}
-
-.owl-prev {
-    left: -40px;
-}
-
-@media screen and (min-width: 240px) {
-    .owl-prev {
-        left: 15px;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    .owl-prev {
-        left: 15px;
-    }
-}
-
-@media screen and (min-width: 992px) {
-    .owl-prev {
-        left: -40;
-    }
 }
 
 .middle-content {

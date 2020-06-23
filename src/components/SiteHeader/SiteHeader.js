@@ -10,7 +10,7 @@ export default class SiteHeader extends Component {
                     <div className="main-header">
                         <div className="row">
                             <div className="col-md-4 col-sm-6 col-xs-10">
-                                <Logo/>
+                                <Logo className="logo"/>
                             </div>
                             <div className="col-md-8 col-sm-6 col-xs-2">
                                 <MainMenu/>

@@ -5,7 +5,7 @@ import logo from './../../styles/images/logo.png';
 export default class Logo extends Component {
     render () {
         return (
-            <div className="logo">
+            <div className={this.props.className}>
                 <Link to="/">
                     <img
                         src={ logo }
