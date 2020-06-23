@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import SiteHeader from './components/SiteHeader';
-// TODO #1
-// import SiteFooter from './components/SiteFooter';
+import SiteFooter from './components/SiteFooter';
+import PartnerList from './components/PartnerList';
 import Home from './pages/Home';
 import Events from './pages/Events';
 // TODO #3
@@ -22,6 +22,8 @@ export default class App extends Component {
                         <Route exact path="/events/:id" component={EventItem}/>
                     </Switch>
 
+                    <PartnerList/>
+                    <SiteFooter/>
                 </BrowserRouter>
             </div>
         );
