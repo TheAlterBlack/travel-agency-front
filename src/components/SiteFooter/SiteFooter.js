@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SocialIcons from "./SocialIcons";
-import Logo from './../SiteHeader/Logo';
+import Logo from '../Logo';
 export default class PartnerList extends Component {
     render() {
         return (

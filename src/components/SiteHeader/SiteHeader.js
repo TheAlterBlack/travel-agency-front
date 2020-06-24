@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MainMenu from './MainMenu';
-import Logo from './Logo';
+import Logo from '../Logo';
 
 export default class SiteHeader extends Component {
     render () {
