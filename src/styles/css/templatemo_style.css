@@ -528,7 +528,9 @@ h3.widget-title {
 }
 
 .widget-item {
-    margin-bottom: 30px;
+    float: left;
+    width: 33.33333333%;
+    padding: 30px;
     overflow: hidden;
 }
 

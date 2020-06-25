@@ -27,6 +27,7 @@ export default class EventItem extends PureComponent {
 
         return (
             <>
+                <div className="page-top" id="templatemo_events"/>
             </>
         );
     }
