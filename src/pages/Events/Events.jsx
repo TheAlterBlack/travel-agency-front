@@ -29,7 +29,7 @@ export default class Events extends PureComponent {
                         list: response.data.data,
                     });
                 })
-                .catch((error) => {
+                .catch(() => {
                     this.setState({
                         loading: false,
                     });
@@ -45,8 +45,8 @@ export default class Events extends PureComponent {
                 <div className="middle-content">
                     <div className="container">
                         <div className="row">
-                            {!loading && list.map((widgetItem, index) => (
-                                <WidgetItem key={index} widgetItem={widgetItem}/>
+                            {!loading && list.map((widgetItem) => (
+                                <WidgetItem key={widgetItem.id} widgetItem={widgetItem}/>
                             ))}
                         </div>
                     </div>
