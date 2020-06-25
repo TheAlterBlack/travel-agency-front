@@ -47,8 +47,8 @@ export default class ListItems extends Component {
                 <div className="row">
                     <div className="our-listing owl-carousel">
                         {
-                            ITEMS.map((item)=>(
-                                <ListItem item={item}/>
+                            ITEMS.map((item, idex)=>(
+                                <ListItem key={idex} item={item}/>
                             ))
                         }
                     </div>

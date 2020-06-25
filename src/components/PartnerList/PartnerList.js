@@ -36,8 +36,8 @@ export default class PartnerList extends Component {
             <div className="partner-list">
                 <div className="container">
                     <div className="row">
-                        {IMAGES.map((item) => (
-                            <PartnerItem image={item.image} name={item.name}/>
+                        {IMAGES.map((item, index) => (
+                            <PartnerItem key={index} image={item.image} name={item.name}/>
                         ))}
                     </div>
                 </div>
