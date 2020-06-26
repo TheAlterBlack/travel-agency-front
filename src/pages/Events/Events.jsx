@@ -5,49 +5,28 @@
  */
 
 import React, { PureComponent } from 'react';
-import axios from 'axios';
-import WidgetItem from "../../components/WidgetItem";
+import { connect } from 'react-redux';
 
-export default class Events extends PureComponent {
-    state = {
-        loading: false,
-        list: [],
-    };
+import WidgetItem from '../../components/WidgetItem';
+import { loadList } from '../../actions/events';
 
-    componentDidMount() {
-        this.loadEvents();
+class Events extends PureComponent {
+    componentDidMount () {
+        this.props.loadEvents();
     }
 
-    loadEvents() {
-        this.setState({
-            loading: true,
-        }, () => {
-            axios.get('http://localhost:3001/vacations')
-                .then((response) => {
-                    this.setState({
-                        loading: false,
-                        list: response.data.data,
-                    });
-                })
-                .catch(() => {
-                    this.setState({
-                        loading: false,
-                    });
-                });
-        });
-    }
+    render () {
+        const { loading, list } = this.props;
 
-    render() {
-        const {loading, list} = this.state;
         return (
             <>
                 <div className="page-top" id="templatemo_events"/>
                 <div className="middle-content">
                     <div className="container">
                         <div className="row">
-                            {!loading && list.map((widgetItem) => (
-                                <WidgetItem key={widgetItem.id} widgetItem={widgetItem}/>
-                            ))}
+                            { !loading && list.map((widgetItem) => (
+                                <WidgetItem key={ widgetItem.id } widgetItem={ widgetItem }/>
+                            )) }
                         </div>
                     </div>
                 </div>
@@ -55,3 +34,13 @@ export default class Events extends PureComponent {
         );
     }
 }
+
+export default connect(
+    (store) => ({
+        list: store.events.list,
+        loading: store.events.loading,
+    }),
+    (dispatch) => ({
+        loadEvents: () => dispatch(loadList()),
+    })
+)(Events);
