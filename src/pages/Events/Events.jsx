@@ -12,7 +12,7 @@ import { loadList } from '../../actions/events';
 
 class Events extends PureComponent {
     componentDidMount () {
-        this.props.loadEvents();
+        !this.props.loaded && this.props.loadEvents();
     }
 
     render () {
@@ -39,6 +39,7 @@ export default connect(
     (store) => ({
         list: store.events.list,
         loading: store.events.loading,
+        loaded: store.events.loaded,
     }),
     (dispatch) => ({
         loadEvents: () => dispatch(loadList()),

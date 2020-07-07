@@ -1,30 +1,28 @@
 import {
-    EVENTS_LIST_REQUEST,
-    EVENTS_LIST_SUCCESS,
-    EVENTS_LIST_ERROR,
-} from '../actions/events';
+    EVENTS_ITEM_REQUEST,
+    EVENTS_ITEM_SUCCESS,
+    EVENTS_ITEM_ERROR,
+} from '../actions/event';
 
 export const INITIAL_STATE = {
-    list: [],
+    item: {},
     loading: false,
-    loaded: false,
 };
 
-export default function eventsListReducer (state = INITIAL_STATE, action) {
+export default function eventsItemReducer (state = INITIAL_STATE, action) {
     switch (action.type) {
-        case EVENTS_LIST_REQUEST:
+        case EVENTS_ITEM_REQUEST:
             return Object.assign({}, state, {
                 loading: true,
             });
 
-        case EVENTS_LIST_SUCCESS:
+        case EVENTS_ITEM_SUCCESS:
             return Object.assign({}, state, {
                 loading: false,
-                loaded: true,
-                list: action.data,
+                item: action.data,
             });
 
-        case EVENTS_LIST_ERROR:
+        case EVENTS_ITEM_ERROR:
             return Object.assign({}, state, {
                 loading: false,
             });

@@ -5,42 +5,19 @@
  */
 
 import React, { PureComponent } from 'react';
-import axios from 'axios';
+import {connect} from "react-redux";
+
 import image from "../../styles/images/event_2.jpg";
+import {loadItem} from "../../actions/event";
 
-export default class EventItem extends PureComponent {
-    state = {
-        loading: false,
-        item: {},
-    };
-
+class EventItem extends PureComponent {
     componentDidMount() {
-        this.loadEvent();
-    }
-
-    loadEvent() {
         const { match: { params: { id } } } = this.props;
-
-        this.setState({
-            loading: true,
-        }, () => {
-            axios.get(`http://localhost:3001/vacations/${id}`)
-                .then((response) => {
-                    this.setState({
-                        loading: false,
-                        item: response.data.item,
-                    });
-                })
-                .catch(() => {
-                    this.setState({
-                        loading: false,
-                    });
-                });
-        });
+        this.props.loadItem(id);
     }
 
     render() {
-        const {loading, item} = this.state;
+        const {loading, item} = this.props;
 
         return (
             <>
@@ -69,3 +46,13 @@ export default class EventItem extends PureComponent {
         );
     }
 }
+
+export default connect(
+    (store) => ({
+        item: store.event.item,
+        loading: store.event.loading,
+    }),
+    (dispatch) => ({
+        loadItem: (id) => dispatch(loadItem(id)),
+    })
+)(EventItem);
